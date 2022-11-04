@@ -1,0 +1,90 @@
+body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: #97b16b;
+        }
+
+        hr {
+            border: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .fa {
+            color: #048BC2;
+            width: 1.3em;
+            text-align: center;
+        }
+
+        .cv-text-filled {
+            color: white;
+            background-color: #048BC2;
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.519);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .margin-left {
+            margin-left: 20px;
+        }
+
+        .margin-right {
+            margin-right: 20px;
+        }
+
+        .margin-bottom {
+            margin-bottom: 20px;
+        }
+
+        .cv-content {
+            width: 100%;
+            display: flex;
+        }
+
+        .cv-content-left {
+            margin-left: 80px;
+            width: 30%;
+            color: rgb(116, 116, 116);
+            background-color: white;
+        }
+
+        .cv-avatar {
+            display: block;
+            position: relative;
+        }
+
+        .cv-avatar-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cv-avatar-name {
+            color: black;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .cv-content-right {
+            width: calc(100% - 30% - 80px - 20px - 80px);
+            margin-right: 80px;
+        }
+
+        .cv-content-box {
+            width: 100%;
+            background-color: white;
+        }
+
+        .cv-content-box-section {
+            margin-left: 30px;
+            width: 100%;
+        }
