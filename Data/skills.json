@@ -9,13 +9,13 @@
         "name": "ASP.NET Core",
         "isPrimary": true,
         "icon": "fa-solid fa-server",
-        "skillLevel": 4
+        "skillLevel": 3
     },
     {
         "name": "React.js",
         "isPrimary": true,
         "icon": "fa-brands fa-react",
-        "skillLevel": 4
+        "skillLevel": 3
     },
     {
         "name": "Wpf",
@@ -45,12 +45,12 @@
         "name": "JavaScript, HTML, Python, C, C++, PHP",
         "isPrimary": false,
         "icon": "fa-solid fa-laptop-code",
-        "skillLevel": 4
+        "skillLevel": 2
     },
     {
         "name": "Linux",
         "isPrimary": false,
         "icon": "fa-brands fa-linux",
-        "skillLevel": 4
+        "skillLevel": 3
     }
 ]
