@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/c0103ba154.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function showSkills() {
+            document.getElementsByName("hiddable-skill")
+                .forEach(x => {
+                    x.classList.remove("hidden");
+                });
+
+            var btn = document.getElementById("show-skills-btn");
+            btn.textContent = "Hide";
+            btn.onclick = hideSkills;
+        }
+
+        function hideSkills() {
+            document.getElementsByName("hiddable-skill")
+                .forEach(x => {
+                    x.classList.add("hidden")
+                })
+
+            var btn = document.getElementById("show-skills-btn");
+            btn.textContent = "Show all";
+            btn.onclick = showSkills;
+        }
+    </script>
+
+    <style>
+        /* CSS */
+        .button-3 {
+            appearance: none;
+            background-color: #048BC2;
+            border: 1px solid rgba(27, 31, 35, .15);
+            border-radius: 6px;
+            box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding: 6px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .button-3:focus:not(:focus-visible):not(.focus-visible) {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .button-3:hover {
+            background-color: #04739e;
+        }
+
+        .button-3:focus {
+            box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+            outline: none;
+        }
+
+        .button-3:disabled {
+            background-color: #94d3a2;
+            border-color: rgba(27, 31, 35, .1);
+            color: rgba(255, 255, 255, .8);
+            cursor: default;
+        }
+
+        .button-3:active {
+            background-color: #025f83;
+            box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: #97b16b71;
+            margin: 0;
+            padding: 0;
+        }
+
+        hr {
+            border: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        footer {
+            background-color: #048BC2;
+            width: 100%;
+            height: 100px;
+            padding: 0;
+            margin-bottom: 0px;
+        }
+
+        .fa {
+            color: #048BC2;
+            width: 1.3em;
+            text-align: center;
+        }
+
+        .cv-text-filled {
+            color: white;
+            background-color: #048BC2;
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .margin-left {
+            margin-left: 20px;
+        }
+
+        .margin-right {
+            margin-right: 20px;
+        }
+
+        .margin-bottom {
+            margin-bottom: 20px;
+        }
+
+        .margin-top {
+            margin-top: 20px
+        }
+
+        .cv-content {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .cv-content-left {
+            margin-left: 80px;
+            width: 30%;
+            color: rgb(116, 116, 116);
+            background-color: white;
+        }
+
+        .cv-avatar {
+            display: block;
+            position: relative;
+        }
+
+        .cv-avatar-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cv-avatar-name {
+            color: black;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .cv-content-right {
+            width: calc(100% - 30% - 80px - 20px - 80px);
+            margin-right: 80px;
+        }
+
+        .cv-content-box {
+            width: 100%;
+            background-color: white;
+        }
+
+        .cv-content-box-section {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-page margin-top">
+        <div class="cv-content">
+            <div class="cv-content-left shadow">
+                <div class="cv-personal-data">
+                    <div class="cv-avatar">
+                        <img class="cv-avatar-img"
+                            src="https://github.com/GeorgeKarlinzer/CV-Content/blob/main/Images/avatar.jpg?raw=true"
+                            alt="Avatar">
+                        <div class="cv-avatar-name margin-left">
+                            <h2>Heorhi Kupryianau</h2>
+                        </div>
+                    </div>
+                    <div class="cv-contact-data margin-left margin-right">
+                        <p>
+                            <i class="fa fa-solid fa-computer-mouse"></i>
+                            .Net Developer
+                        </p>
+                        <p>
+                            <i class="fa fa-solid fa-house"></i>
+                            Poland, Cracov
+                        </p>
+
+                        <p>
+                            <i class="fa fa-solid fa-phone"></i>
+                            +48 731 396 083
+                        </p>
+                        <p>
+                            <i class="fa fa-solid fa-envelope"></i>
+                            h.kupryianau@gmail.com
+                        </p>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="margin-left margin-right">
+                    <h3>
+                        <i class="fa fa-solid fa-dumbbell"></i>
+                        Skills
+                    </h3>
+                    <div>
+                        <p style="width: 100%;">
+                            <i class="fa fa-solid fa-keyboard"></i>
+                            .NET Core (C#)
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div>
+                        <p style="width: 100%;">
+                            <i class="fa fa-solid fa-server"></i>
+                            ASP.NET Core
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div>
+                        <p style="width: 100%;">
+                            <i class="fa fa-brands fa-react"></i>
+                            React .js  
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div name="hiddable-skill" class="hidden">
+                        <p style="width: 100%;">
+                            <i class="fa fa-solid fa-desktop"></i>
+                            Wpf
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div name="hiddable-skill" class="hidden">
+                        <p style="width: 100%;">
+                            <i class="fa fa-brands fa-git-alt"></i>
+                            Git
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div name="hiddable-skill" class="hidden">
+                        <p style="width: 100%;">
+                            <i class="fa fa-solid fa-database"></i>
+                            Sql Server
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div name="hiddable-skill" class="hidden">
+                        <p style="width: 100%;">
+                            <i class="fa fa-solid fa-hammer"></i>
+                            Data Structures, Algorithms, LINQ 
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div name="hiddable-skill" class="hidden">
+                        <p style="width: 100%;">
+                            <i class="fa fa-solid fa-laptop-code"></i>
+                            JavaScript, HTML, Python, C, C++, PHP
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+                    <div name="hiddable-skill" class="hidden">
+                        <p style="width: 100%;">
+                            <i class="fa fa-brands fa-linux"></i>
+                            Linux
+                        </p>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-solid fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                        <i class="fa fa-regular fa-star"></i>
+                    </div>
+
+                    <!-- <button id="hide-skills-btn" class="hidden margin-bottom" style="width: 100%; margin-top: 20px;"
+                        onclick="hideSkills()">
+                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                    </button> -->
+                    <button id="show-skills-btn" class="button-3 margin-bottom margin-top" onclick="showSkills()"
+                        role="button">Show all</button>
+                </div>
+                <hr>
+                <div class="margin-left margin-right margin-bottom">
+                    <h3>
+                        <i class="fa fa-solid fa-language"></i>
+                        Languages
+                    </h3>
+
+                    <p style="width: 100%;">
+                        English
+                    </p>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-regular fa-star"></i>
+                    <p style="width: 100%;">
+                        Polish
+                    </p>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <p style="width: 100%;">
+                        Russian
+                    </p>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                </div>
+            </div>
+
+            <div class="cv-content-right margin-left">
+                <div class="cv-content-box shadow margin-bottom">
+                    <br>
+                    <h1 class="margin-left margin-right" style="margin-bottom: 40px;">
+                        <i class="fa fa-solid fa-gear"></i>
+                        Work Experience
+                    </h1>
+                    <div class="cv-content-box-section">
+                        <h3>Game developer / Freelance</h3>
+                        <h4>
+                            <i class="fa fa-solid fa-calendar"></i>
+                            Jan 2020 - Mar 2022
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
+                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
+                            iste.</p>
+                    </div>
+                    <hr>
+                    <div class="cv-content-box-section">
+                        <h3>Game developer / Freelance</h3>
+                        <h4>
+                            <i class="fa fa-solid fa-calendar"></i>
+                            Jan 2020 - Mar 2022
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
+                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
+                            iste.</p>
+                    </div>
+                    <br>
+                </div>
+                <div class="cv-content-box shadow margin-bottom">
+                    <br>
+                    <h1 class="margin-left margin-right" style="margin-bottom: 40px;">
+                        <i class="fa fa-solid fa-school"></i>
+                        Education
+                    </h1>
+                    <div class="cv-content-box-section">
+                        <h3>AGH, Kraków</h3>
+                        <h4>
+                            <i class="fa fa-solid fa-calendar"></i>
+                            Sep 2020 –
+                            <span class="cv-text-filled">Current</span>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
+                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
+                            iste.</p>
+                    </div>
+                    <br>
+                </div>
+                <div class="cv-content-box shadow margin-bottom">
+                    <br>
+                    <h1 class="margin-left margin-right" style="margin-bottom: 40px;">
+                        <i class="fa fa-solid fa-folder-open"></i>
+                        Projects
+                    </h1>
+                    <div class="cv-content-box-section">
+                        <h3>
+                            <a href="url">Chess</a>
+                        </h3>
+                        <h4>
+                            <span>ASP.Net Core</span>
+                            <span>React.js</span>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
+                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
+                            iste.</p>
+                    </div>
+                    <hr>
+                    <div class="cv-content-box-section">
+                        <h3>
+                            <a href="url">Chess</a>
+                        </h3>
+                        <h4>
+                            <span>ASP.Net Core</span>
+                            <span>React.js</span>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
+                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
+                            iste.</p>
+                    </div>
+                    <hr>
+                    <div class="cv-content-box-section">
+                        <h3>
+                            <a href="url">Chess</a>
+                        </h3>
+                        <h4>
+                            <span>ASP.Net Core</span>
+                            <span>React.js</span>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
+                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
+                            iste.</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+<script>
+    showSkills();
+</script>
+
+</html>
