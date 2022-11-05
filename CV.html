@@ -2,8 +2,7 @@
 <html>
 
 <head>
-    <script src="https://kit.fontawesome.com/c0103ba154.js"
-        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c0103ba154.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Styles/app.css">
@@ -72,7 +71,7 @@
                 </div>
 
                 <div class="margin-left margin-right">
-                    <div id="skill-section">
+                    <div id="skills-section">
                         <h3>
                             <i class="fa fa-solid fa-dumbbell"></i>
                             Skills
@@ -183,43 +182,18 @@
                         <i class="fa fa-solid fa-folder-open"></i>
                         Projects
                     </h1>
-                    <div class="cv-content-box-section">
-                        <h3>
-                            <a href="url">Chess</a>
-                        </h3>
-                        <h4>
-                            <span>ASP.Net Core</span>
-                            <span>React.js</span>
-                        </h4>
-                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
-                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
-                            iste.</p>
-                    </div>
-                    <hr>
-                    <div class="cv-content-box-section">
-                        <h3>
-                            <a href="url">Chess</a>
-                        </h3>
-                        <h4>
-                            <span>ASP.Net Core</span>
-                            <span>React.js</span>
-                        </h4>
-                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
-                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
-                            iste.</p>
-                    </div>
-                    <hr>
-                    <div class="cv-content-box-section">
-                        <h3>
-                            <a href="url">Chess</a>
-                        </h3>
-                        <h4>
-                            <span>ASP.Net Core</span>
-                            <span>React.js</span>
-                        </h4>
-                        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est
-                            reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure,
-                            iste.</p>
+                    <div id="projects-section">
+                        <template id="project-template">
+                            <div class="cv-content-box-section">
+                                <h3>
+                                    <a href="url">Name</a>
+                                </h3>
+                                <h4>
+                                    Technology 1, Technology 2, ...
+                                </h4>
+                                <p>Project description</p>
+                            </div>
+                        </template>
                     </div>
                     <br>
                 </div>
@@ -232,7 +206,7 @@
 
 </body>
 <script>
-    function generateSkill(skill, template, skillSection) {
+    function generateSkill(skill, template, section) {
         var skillEl = template.content.cloneNode(true).querySelector('div');
         var fullStarClasses = 'fa fa-solid fa-star';
         var emptyStartClasses = 'fa fa-regular fa-star';
@@ -251,23 +225,50 @@
 
         // Set stars according to skill level
         var starsEl = skillEl.querySelectorAll('div > i');
-        for(var i = 1; i <= 5; i++){
+        for (var i = 1; i <= 5; i++) {
             starsEl[i - 1].className = i <= skill.skillLevel ? fullStarClasses : emptyStartClasses;
         }
 
-        skillSection.appendChild(skillEl);
+        section.appendChild(skillEl);
     }
 
+    function generateProject(project, template, section) {
+        var projectEl = template.content.cloneNode(true).querySelector('div');
+
+        // Set project name
+        var nameEl = projectEl.querySelector('h3 a');
+        nameEl.setAttribute('href', project.link);
+        nameEl.innerHTML = project.name;
+
+        section.appendChild(projectEl);
+    }
+
+
+    // Generate all skills
     fetch('https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/skills.json')
         .then(response => response.json())
         .then(data => {
             var skills = JSON.parse(atob(data.content));
 
-            var skillSection = document.getElementById('skill-section');
+            var skillsSection = document.getElementById('skills-section');
             var template = document.getElementById('skill-template');
 
             skills.forEach(skill => {
-                generateSkill(skill, template, skillSection);
+                generateSkill(skill, template, skillsSection);
+            });
+        })
+
+    // Generate all projects
+    fetch('https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            var projects = JSON.parse(atob(data.content));
+
+            var projectsSection = document.getElementById('projects-section');
+            var template = document.getElementById('project-template');
+
+            skills.forEach(project => {
+                generateProject(skill, template, projectsSection);
             });
         })
 </script>

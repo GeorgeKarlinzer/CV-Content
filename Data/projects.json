@@ -5,7 +5,7 @@
         "technologies": [
             "ASP.NET Core", "React.js"
         ],
-        "description": "Chess game"
+        "description": "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste."
     },
     {
         "name": "Chess",
@@ -13,7 +13,7 @@
         "technologies": [
             "ASP.NET Core", "React.js"
         ],
-        "description": "Chess game"
+        "description": "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste."
     },
     {
         "name": "Chess",
@@ -21,6 +21,6 @@
         "technologies": [
             "ASP.NET Core", "React.js"
         ],
-        "description": "Chess game"
+        "description": "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste."
     }
 ]
