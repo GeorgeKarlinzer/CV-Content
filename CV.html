@@ -2,10 +2,8 @@
 <html>
 
 <head>
-    <script onload="() => console.log('ads')" src="https://kit.fontawesome.com/c0103ba154.js"
+    <script src="https://kit.fontawesome.com/c0103ba154.js"
         crossorigin="anonymous"></script>
-    <script src="https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Scripts/ContentGenerator.ts"
-        type="text/typescript" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Styles/app.css">
@@ -260,7 +258,6 @@
         skillSection.appendChild(skillEl);
     }
 
-
     fetch('https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/skills.json')
         .then(response => response.json())
         .then(data => {
@@ -273,8 +270,6 @@
                 generateSkill(skill, template, skillSection);
             });
         })
-
-    // showSkills();
 </script>
 
 </html>
