@@ -2,8 +2,13 @@
 <html>
 
 <head>
-    <script src="https://kit.fontawesome.com/c0103ba154.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Styles/app.css">
+    <script onload="() => console.log('ads')" src="https://kit.fontawesome.com/c0103ba154.js"
+        crossorigin="anonymous"></script>
+    <script src="https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Scripts/ContentGenerator.ts"
+        type="text/typescript" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Styles/app.css">
 
     <script type="text/javascript">
         function showSkills() {
@@ -28,9 +33,9 @@
             btn.onclick = showSkills;
         }
     </script>
-    
 
-    <style ></style>
+
+    <style></style>
 </head>
 
 <body>
@@ -69,116 +74,113 @@
                 </div>
 
                 <div class="margin-left margin-right">
-                    <h3>
-                        <i class="fa fa-solid fa-dumbbell"></i>
-                        Skills
-                    </h3>
-                    <div>
-                        <p style="width: 100%;">
-                            <i class="fa fa-solid fa-keyboard"></i>
-                            .NET Core (C#)
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
+                    <div id="skill-section">
+                        <h3>
+                            <i class="fa fa-solid fa-dumbbell"></i>
+                            Skills
+                        </h3>
+                        <!-- <div>
+                            <p style="width: 100%;">
+                                <i class="fa fa-solid fa-keyboard"></i>
+                                .NET Core (C#)
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div>
+                            <p style="width: 100%;">
+                                <i class="fa fa-solid fa-server"></i>
+                                ASP.NET Core
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div>
+                            <p style="width: 100%;">
+                                <i class="fa fa-brands fa-react"></i>
+                                React .js
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div name="hiddable-skill" class="hidden">
+                            <p style="width: 100%;">
+                                <i class="fa fa-solid fa-desktop"></i>
+                                Wpf
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div name="hiddable-skill" class="hidden">
+                            <p style="width: 100%;">
+                                <i class="fa fa-brands fa-git-alt"></i>
+                                Git
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div name="hiddable-skill" class="hidden">
+                            <p style="width: 100%;">
+                                <i class="fa fa-solid fa-database"></i>
+                                Sql Server
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div name="hiddable-skill" class="hidden">
+                            <p style="width: 100%;">
+                                <i class="fa fa-solid fa-hammer"></i>
+                                Data Structures, Algorithms, LINQ
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div name="hiddable-skill" class="hidden">
+                            <p style="width: 100%;">
+                                <i class="fa fa-solid fa-laptop-code"></i>
+                                JavaScript, HTML, Python, C, C++, PHP
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div>
+                        <div name="hiddable-skill" class="hidden">
+                            <p style="width: 100%;">
+                                <i class="fa fa-brands fa-linux"></i>
+                                Linux
+                            </p>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-solid fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                            <i class="fa fa-regular fa-star"></i>
+                        </div> -->
+                        <button id="show-skills-btn" class="button-3 margin-bottom margin-top" onclick="showSkills()"
+                            role="button">Show all</button>
                     </div>
-                    <div>
-                        <p style="width: 100%;">
-                            <i class="fa fa-solid fa-server"></i>
-                            ASP.NET Core
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div>
-                        <p style="width: 100%;">
-                            <i class="fa fa-brands fa-react"></i>
-                            React .js  
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div name="hiddable-skill" class="hidden">
-                        <p style="width: 100%;">
-                            <i class="fa fa-solid fa-desktop"></i>
-                            Wpf
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div name="hiddable-skill" class="hidden">
-                        <p style="width: 100%;">
-                            <i class="fa fa-brands fa-git-alt"></i>
-                            Git
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div name="hiddable-skill" class="hidden">
-                        <p style="width: 100%;">
-                            <i class="fa fa-solid fa-database"></i>
-                            Sql Server
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div name="hiddable-skill" class="hidden">
-                        <p style="width: 100%;">
-                            <i class="fa fa-solid fa-hammer"></i>
-                            Data Structures, Algorithms, LINQ 
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div name="hiddable-skill" class="hidden">
-                        <p style="width: 100%;">
-                            <i class="fa fa-solid fa-laptop-code"></i>
-                            JavaScript, HTML, Python, C, C++, PHP
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-                    <div name="hiddable-skill" class="hidden">
-                        <p style="width: 100%;">
-                            <i class="fa fa-brands fa-linux"></i>
-                            Linux
-                        </p>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-solid fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                        <i class="fa fa-regular fa-star"></i>
-                    </div>
-
-                    <!-- <button id="hide-skills-btn" class="hidden margin-bottom" style="width: 100%; margin-top: 20px;"
-                        onclick="hideSkills()">
-                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                    </button> -->
-                    <button id="show-skills-btn" class="button-3 margin-bottom margin-top" onclick="showSkills()"
-                        role="button">Show all</button>
                 </div>
                 <hr>
                 <div class="margin-left margin-right margin-bottom">
@@ -315,9 +317,54 @@
 
         </footer>
     </div>
+    <template id="skill-template">
+        <div id="skill-container">
+            <p style="width: 100%;">
+                <i class="fa fa-solid fa-hammer"></i>
+                SkillName
+            </p>
+            <i class="fa fa-solid fa-star"></i>
+            <i class="fa fa-solid fa-star"></i>
+            <i class="fa fa-solid fa-star"></i>
+            <i class="fa fa-regular fa-star"></i>
+            <i class="fa fa-regular fa-star"></i>
+        </div>
+    </template>
 </body>
 <script>
-    showSkills();
+    function generateSkill(skill){
+        var div = document.createElement('div');
+
+        if(!skill.isPrimary){
+            div.className = 'hidden';
+            div.setAttribute('name', 'hiddable-skill');
+        }
+        
+        var p = document.createElement('p');
+        p.textContent = `${skill.name}`;
+        div.appendChild(p);
+
+        return div;
+    }
+    
+    fetch('https://raw.githack.com/GeorgeKarlinzer/CV-Content/main/Data/skills.json')
+        .then(response => response.json())
+        .then(skills => {
+            var skillSection = document.getElementById('skill-section');
+            var template = document.getElementById('skill-template');
+
+            skills.forEach(skill => {
+                var skillEl = template.content.cloneNode(true).querySelector('#' + 'skill-container');
+                
+                if(!skill.isPrimary){
+                    skillEl.className = 'hidden';
+                    skillEl.setAttribute('name', 'hiddable-skill');
+                }
+                skillSection.appendChild(skillEl);
+            });
+        })
+
+    // showSkills();
 </script>
 
 </html>
