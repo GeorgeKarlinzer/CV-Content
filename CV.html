@@ -263,12 +263,14 @@
                     </h1>
                     <div id="educations-section" class="cv-content-box-section">
                         <template id="education-template">
-                            <h3>School name</h3>
-                            <h4>
-                                <i class="fa fa-solid fa-calendar"></i>
-                                <!-- Dates-->
-                            </h4>
-                            <p>Description</p>
+                            <div>
+                                <h3>School name</h3>
+                                <h4>
+                                    <i class="fa fa-solid fa-calendar"></i>
+                                    <!-- Dates-->
+                                </h4>
+                                <p>Description</p>
+                            </div>
                         </template>
                     </div>
                     <br>
@@ -330,11 +332,18 @@
         }
     ];
 
+    function b64DecodeUnicode(str) {
+        // Going backwards: from bytestream, to percent-encoding, to original string.
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+
     dynamicElements.forEach(element => {
         fetch(element.link)
             .then(response => response.json())
             .then(data => {
-                var items = JSON.parse(atob(data.content));
+                var items = JSON.parse(b64DecodeUnicode(data.content));
 
                 var section = document.getElementById(element.sectionId);
                 var template = document.getElementById(element.templateId);
