@@ -83,7 +83,7 @@
         }
 
         function generateEducation(education, template, section, isLast) {
-            var educationEl = template.content.cloneNode(true).querySelector('div');
+            // var educationEl = template.content.cloneNode(true).querySelector('div');
 
             // Set place
         }
@@ -109,7 +109,7 @@
 
             // Set description
             var descriptionEl = jobEl.querySelector('p');
-            descriptionEl.innerHTML = job.descriptionl;
+            descriptionEl.innerHTML = job.description;
 
             if(!isLast) addHr(jobEl);
             section.appendChild(jobEl);
