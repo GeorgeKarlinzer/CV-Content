@@ -1,0 +1,56 @@
+[
+    {
+        "name": ".NET Core (C#)",
+        "primary": true,
+        "icon": "fa-solid fa-keyboard",
+        "skillLevel": 4
+    },
+    {
+        "name": "ASP.NET Core",
+        "primary": true,
+        "icon": "fa-solid fa-server",
+        "skillLevel": 4
+    },
+    {
+        "name": "React.js",
+        "primary": true,
+        "icon": "fa-brands fa-react",
+        "skillLevel": 4
+    },
+    {
+        "name": "Wpf",
+        "primary": false,
+        "icon": "fa-solid fa-desktop",
+        "skillLevel": 4
+    },
+    {
+        "name": "Git",
+        "primary": false,
+        "icon": "fa-brands fa-git-alt",
+        "skillLevel": 4
+    },
+    {
+        "name": "Sql Server",
+        "primary": false,
+        "icon": "fa-solid fa-database",
+        "skillLevel": 4
+    },
+    {
+        "name": "Data Structures, Algorithms, LINQ ",
+        "primary": false,
+        "icon": "fa-solid fa-hammer",
+        "skillLevel": 4
+    },
+    {
+        "name": "JavaScript, HTML, Python, C, C++, PHP",
+        "primary": false,
+        "icon": "fa-solid fa-laptop-code",
+        "skillLevel": 4
+    },
+    {
+        "name": "Linux",
+        "primary": false,
+        "icon": "fa-brands fa-linux",
+        "skillLevel": 4
+    }
+]

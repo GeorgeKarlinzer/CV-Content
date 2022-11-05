@@ -1,3 +1,4 @@
-export default function generateContent(){
-    
+
+export function generateSkills() {
+
 }
