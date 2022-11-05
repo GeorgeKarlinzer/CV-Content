@@ -29,6 +29,51 @@
             btn.textContent = "Show all";
             btn.onclick = showSkills;
         }
+        function generateSkill(skill, template, section) {
+            var skillEl = template.content.cloneNode(true).querySelector('div');
+            var fullStarClasses = 'fa fa-solid fa-star';
+            var emptyStartClasses = 'fa fa-regular fa-star';
+
+            // Set hiddability if skill is not primary
+            if (!skill.isPrimary) {
+                skillEl.className = 'hidden';
+                skillEl.setAttribute('name', 'hiddable-skill');
+            }
+
+            // Set skill icon and name
+            var skillNameEl = skillEl.querySelector('p');
+            var skillNameIconEl = skillNameEl.querySelector('i');
+            skillNameIconEl.className = 'fa ' + skill.icon;
+            skillNameEl.innerHTML += skill.name;
+
+            // Set stars according to skill level
+            var starsEl = skillEl.querySelectorAll('div > i');
+            for (var i = 1; i <= 5; i++) {
+                starsEl[i - 1].className = i <= skill.skillLevel ? fullStarClasses : emptyStartClasses;
+            }
+
+            section.appendChild(skillEl);
+        }
+
+        function generateProject(project, template, section) {
+            var projectEl = template.content.cloneNode(true).querySelector('div');
+
+            // Set name
+            var nameEl = projectEl.querySelector('h3 a');
+            nameEl.setAttribute('href', project.link);
+            nameEl.innerHTML = project.name;
+
+            // Set technologies
+            var technologiesEl = projectEl.querySelector('h4');
+            technologiesEl.innerHTML = project.technologies.join(', ');
+
+            // Set description
+            var descriptionEl = projectEl.querySelector('p');
+            descriptionEl.innerHTML = project.description;
+
+            section.appendChild(projectEl);
+        }
+
     </script>
 
 
@@ -206,71 +251,36 @@
 
 </body>
 <script>
-    function generateSkill(skill, template, section) {
-        var skillEl = template.content.cloneNode(true).querySelector('div');
-        var fullStarClasses = 'fa fa-solid fa-star';
-        var emptyStartClasses = 'fa fa-regular fa-star';
-
-        // Set hiddability if skill is not primary
-        if (!skill.isPrimary) {
-            skillEl.className = 'hidden';
-            skillEl.setAttribute('name', 'hiddable-skill');
+    var dynamicElements = [
+        {
+            link: 'https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/skills.json',
+            sectionId: 'skills-section',
+            templateId: 'skill-template',
+            function: generateSkill
+        },
+        {
+            link: 'https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/projects.json',
+            sectionId: 'projects-section',
+            templateId: 'project-template',
+            function: generateProject
+        },
+        {
+            
         }
+    ];
 
-        // Set skill icon and name
-        var skillNameEl = skillEl.querySelector('p');
-        var skillNameIconEl = skillNameEl.querySelector('i');
-        skillNameIconEl.className = 'fa ' + skill.icon;
-        skillNameEl.innerHTML += skill.name;
+    dynamicElements.forEach(element => {
+        fetch(element.link)
+            .then(response => response.json())
+            .then(data => {
+                var items = JSON.parse(atob(data.content));
 
-        // Set stars according to skill level
-        var starsEl = skillEl.querySelectorAll('div > i');
-        for (var i = 1; i <= 5; i++) {
-            starsEl[i - 1].className = i <= skill.skillLevel ? fullStarClasses : emptyStartClasses;
-        }
+                var section = document.getElementById(element.sectionId);
+                var template = document.getElementById(element.templateId);
 
-        section.appendChild(skillEl);
-    }
-
-    function generateProject(project, template, section) {
-        var projectEl = template.content.cloneNode(true).querySelector('div');
-
-        // Set project name
-        var nameEl = projectEl.querySelector('h3 a');
-        nameEl.setAttribute('href', project.link);
-        nameEl.innerHTML = project.name;
-
-        section.appendChild(projectEl);
-    }
-
-
-    // Generate all skills
-    fetch('https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/skills.json')
-        .then(response => response.json())
-        .then(data => {
-            var skills = JSON.parse(atob(data.content));
-
-            var skillsSection = document.getElementById('skills-section');
-            var template = document.getElementById('skill-template');
-
-            skills.forEach(skill => {
-                generateSkill(skill, template, skillsSection);
-            });
-        })
-
-    // Generate all projects
-    fetch('https://api.github.com/repos/GeorgeKarlinzer/CV-Content/contents/Data/projects.json')
-        .then(response => response.json())
-        .then(data => {
-            var projects = JSON.parse(atob(data.content));
-
-            var projectsSection = document.getElementById('projects-section');
-            var template = document.getElementById('project-template');
-
-            skills.forEach(project => {
-                generateProject(skill, template, projectsSection);
-            });
-        })
+                items.forEach(item => element.function(item, template, section));
+            })
+    });
 </script>
 
 </html>
